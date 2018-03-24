@@ -12,9 +12,6 @@ const Nav = () => (
         <a href="/" className="navbar-brand">
           SOM Nominations
         </a>
-        <a href="/students" className="navbar-brand">
-        Current Month
-        </a>
       </div>
     </div>
   </nav>

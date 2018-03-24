@@ -14,8 +14,5 @@ router
   .delete(studentsController.remove);
 
 // Matches with
-router
-  .router("/students")
-  .get(studentsController.findAll)
 
 module.exports = router;
