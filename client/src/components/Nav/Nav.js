@@ -10,7 +10,10 @@ const Nav = () => (
           <span className="icon-bar" />
         </button>
         <a href="/" className="navbar-brand">
-          React Reading List
+          SOM Nominations
+        </a>
+        <a href="/students" className="navbar-brand">
+        Current Month
         </a>
       </div>
     </div>
