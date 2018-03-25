@@ -16,6 +16,10 @@ const studentSchema = new Schema({
     type: String, 
     required: true
   },
+  notes: {
+      type: String,
+      required: false
+  },
   date: { 
     type: Date, 
     default: Date.now 

@@ -6,15 +6,23 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
+import Monthly from "./award.json";
+
+//this will display the award depending on the month
+let holder = new Date();
+let elm1 = holder.getMonth();
+let elm2 = Object.entries(Monthly)[elm1];
+let month = elm2[1];
+//console.log(month);
 
 class Students extends Component {
   state = {
     students: [],
     name: "",
     teacher: "",
-    award: ""
+    award: "Citizenship",
+    notes: ""
   };
-
   componentDidMount() {
     this.loadStudents();
   }
@@ -22,7 +30,7 @@ class Students extends Component {
   loadStudents = () => {
     API.getStudents()
       .then(res =>
-        this.setState({ students: res.data, name: "", teacher: "", award: "" })
+        this.setState({ students: res.data, name: "", teacher: "", award: month, notes: "" })
       )
       .catch(err => console.log(err));
   };
@@ -32,6 +40,10 @@ class Students extends Component {
       .then(res => this.loadStudents())
       .catch(err => console.log(err));
   };
+
+  handleChange(event) {
+      this.setState({ award: event.target.value });
+  }
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -46,12 +58,14 @@ class Students extends Component {
       API.saveStudent({
         name: this.state.name,
         teacher: this.state.teacher,
-        award: this.state.award
+        award: this.state.award,
+        notes: this.state.notes
       })
         .then(res => this.loadStudents())
         .catch(err => console.log(err));
     }
   };
+
 
   render() {
     return (
@@ -74,11 +88,20 @@ class Students extends Component {
                 name="teacher"
                 placeholder="Teacher (required)"
               />
-              <TextArea
+              <select value={this.state.award} onChange={this.handleChange}>
+                <option
                 value={this.state.award}
+                  name="Award">"Student of the Month"
+                </option>
+                <option value="Citizenship"
+                           name="Award">Citizenship
+                </option>
+              </select>
+              <TextArea
+                value={this.state.notes}
                 onChange={this.handleInputChange}
-                name="award"
-                placeholder="Award (Optional)"
+                name="notes"
+                placeholder="notes (Optional)"
               />
               <FormBtn
                 disabled={!(this.state.teacher && this.state.name)}
