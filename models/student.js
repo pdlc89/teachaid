@@ -14,7 +14,7 @@ const studentSchema = new Schema({
   },
   award: {
     type: String, 
-    required: true
+    required: false
   },
   date: { 
     type: Date, 

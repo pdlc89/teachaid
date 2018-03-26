@@ -57,38 +57,32 @@ class Students extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-6">
+          <Col size="md-12 sm-12">
             <Jumbotron>
-              <h1>Nominate a Student</h1>
+              <h1 class="text-center">Students On My List</h1>
             </Jumbotron>
-            <form>
-              <Input
-                value={this.state.name}
-                onChange={this.handleInputChange}
-                name="name"
-                placeholder="Name (required)"
-              />
-              <Input
-                value={this.state.teacher}
-                onChange={this.handleInputChange}
-                name="teacher"
-                placeholder="Teacher (required)"
-              />
-              <TextArea
-                value={this.state.award}
-                onChange={this.handleInputChange}
-                name="award"
-                placeholder="Award (Optional)"
-              />
-              <FormBtn
-                disabled={!(this.state.teacher && this.state.name)}
-                onClick={this.handleFormSubmit}
-              >
-                Submit Student
-              </FormBtn>
-            </form>
+            </Col>
+            </Row>
+        <div class="row align-self-center">
+              <Col size="md-6 sm-12" >
+            {this.state.students.length ? (
+              <List>
+                {this.state.students.map(student => (
+                  <ListItem key={student._id}>
+                    <Link to={"/students/" + student._id}>
+                      <strong>
+                        {student.name} by {student.teacher}
+                      </strong>
+                    </Link>
+                    <DeleteBtn onClick={() => this.deleteStudent(student._id)} />
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
           </Col>
-        </Row>
+        </div>
       </Container>
     );
   }

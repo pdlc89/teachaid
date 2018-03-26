@@ -10,7 +10,13 @@ const Nav = () => (
           <span className="icon-bar" />
         </button>
         <a href="/" className="navbar-brand">
-          SOM Nominations
+        Home
+        </a>
+        <a href="/nominate" className="navbar-brand">
+        Nominate a Student
+        </a>
+        <a href="/nominated" className="navbar-brand">
+        Nominations for this Month
         </a>
       </div>
     </div>

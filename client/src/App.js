@@ -4,14 +4,17 @@ import Students from "./pages/Students";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
-// import Nominate from "./pages/Nominate";
+import Splash from "./pages/Splash";
+import Nominated from "./pages/Nominated";
 
 const App = () => (
   <Router>
     <div>
       <Nav />
       <Switch>
-        <Route exact path="/" component={Students} />
+        <Route exact path="/" component={Splash}/>
+        <Route exact path="/nominated" component={Nominated} />
+        <Route exact path="/nominate" component={Students} />
         <Route exact path="/students" component={Students} />
         <Route exact path="/students/:id" component={Detail} />
         <Route component={NoMatch} />
