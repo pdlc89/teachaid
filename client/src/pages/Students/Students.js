@@ -41,7 +41,7 @@ class Students extends Component {
       .catch(err => console.log(err));
   };
 
-  handleChange(event) {
+  handleChange = event => {
       this.setState({ award: event.target.value });
   }
 
@@ -88,7 +88,7 @@ class Students extends Component {
                 name="teacher"
                 placeholder="Teacher (required)"
               />
-              <select value={this.state.award} onChange={this.handleChange}>
+              <select onChange={this.handleChange}>
                 <option
                 value={this.state.award}
                   name="Award">"Student of the Month"
