@@ -20,28 +20,25 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-        
 <div class="site-wrapper video-background">
     <a id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=yXOzdUXIsSY', containment:'body', autoPlay:true, mute:true, startAt:1, stopAt: 53, opacity:1, }"></a>
-    <div class="overlay"></div>
+    <div class="overlay">
+        <nav class="nav">
+            <form id="signin" class="navbar-form navbar-right" role="form">
+                <div class="input-group">
+                    <input id="email" type="email" class="form-control" name="email" placeholder="Email Address">                                        
+                </div>
+                <div class="input-group">
+                    <input id="password" type="password" class="form-control" name="password" placeholder="Password">                                        
+                </div>
+                <button type="submit"class="btn btn-warning">Login</button>
+            </form>
+        </nav>   
+    </div>
     <div class="site-wrapper-inner">
             <div class="masthead clearfix">
                 <div class="inner">
-                    <h3 class="masthead-brand"><a href="#home"><img src="assets/images/ableft.png" /><br></a></h3>
-                    <nav>
-                            <form id="signin" class="navbar-form navbar-right" role="form">
-                                <div class="input-group">
-                                    <input id="email" type="email" class="form-control" name="email" value="" placeholder="Email Address">                                        
-                                </div>
-                        
-                                <div class="input-group">
-                                 
-                                    <input id="password" type="password" class="form-control" name="password" value="" placeholder="Password">                                        
-                                </div>
-                        
-                                <button type="submit"class="btn btn-warning">Login</button>
-                            </form>
-                    </nav>
+                    <class="masthead-brand"><a href="#home"><img src="assets/images/ableft.png" /><br></a>
                 </div>
             </div>
             <div class="cover-container">

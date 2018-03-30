@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
     <!-- Custom styles for this template -->
-    <link href="style.css" rel="stylesheet">
+    <link href="login.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
@@ -20,31 +20,46 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div class="container" id="login">
+    <div class="container">
         <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
-                <form>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <nav class="navbar navbar-light bg-light text-right">
+                <a href="./index.html" class="navbar-link btn btn-warning">Home</a></p>
+            </nav>
+        </div>
+        
+        <div class="row " align="center">
+            <h1>LETS GET YOU SETTLED IN</h1>
+        </div>
+        <div class="container login" align="center">
+            <div class="row">
+                <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <div class="col align-self-center box">
+                            <form>
+                                <div class="form-group">
+                                        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="First name">
+                                </div>
+                                <div class="form-group">
+                                        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Last name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="password" placeholder="Password">
+                                </div>
+                                <button type="submit" class="btn btn-success">Submit</button>
+                                <button type="submit" class="btn btn-danger">Google+</button>
+                            </form>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
-                    <button type="submit" class="btn btn-success">Submit</button>
-                    <button type="submit" class="btn btn-danger">Google+</button>
-                </form>
+                <div class="col-md-3"></div>
             </div>
-            <div class="col-md-4"></div>
         </div>
     </div>
 </body>
-
 </html>
+
+
+
+
