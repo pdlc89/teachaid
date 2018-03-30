@@ -61,7 +61,7 @@ body {
 
 /* Padding for spacing */
 .inner {
-  padding: 30px;
+  padding: 55px;
 }
 
 .login {
@@ -74,7 +74,9 @@ body {
  * Header
  */
 
-
+.nav {
+  padding: 120px;
+}
 .masthead-nav > li,
 .masthead-brand > li {
   display: inline-block;
@@ -197,11 +199,11 @@ body {
 
 small {
     color:#ccc!important;
-}img
+}
 
-/*
- * Footer
- */
+img
+
+/* Footer */
 
 .mastfoot {
   color: #999; /* IE8 proofing */
