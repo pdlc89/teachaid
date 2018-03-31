@@ -4,6 +4,7 @@ import Splash from "./pages/Splash";
 import Students from "./pages/Students";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
+import Chat from "./pages/Chat";
 import Nav from "./components/Nav";
 // import Nominate from "./pages/Nominate";
 
@@ -15,6 +16,7 @@ const App = () => (
         <Route exact path="/" component={Splash} />
         <Route exact path="/students" component={Students} />
         <Route exact path="/students/:id" component={Detail} />
+        <Route exact path="/chat" component={Chat} />
         <Route component={NoMatch} />
       </Switch>
     </div>
