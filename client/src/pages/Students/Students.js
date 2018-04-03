@@ -6,23 +6,27 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
+import Nominate from '../../components/Form/Nominate'
+import Card from "../../components/Card";
 
 class Students extends Component {
   state = {
     students: [],
     name: "",
+    grade: "",
     teacher: "",
     award: ""
   };
 
   componentDidMount() {
     this.loadStudents();
+    console.log(this);
   }
 
   loadStudents = () => {
     API.getStudents()
       .then(res =>
-        this.setState({ students: res.data, name: "", teacher: "", award: "" })
+        this.setState({ students: res.data, name: "", grade: "", teacher: "", award: "" })
       )
       .catch(err => console.log(err));
   };
@@ -33,62 +37,24 @@ class Students extends Component {
       .catch(err => console.log(err));
   };
 
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
-
-  handleFormSubmit = event => {
-    event.preventDefault();
-    if (this.state.name && this.state.teacher) {
-      API.saveStudent({
-        name: this.state.name,
-        teacher: this.state.teacher,
-        award: this.state.award
-      })
-        .then(res => this.loadStudents())
-        .catch(err => console.log(err));
-    }
-  };
 
   render() {
     return (
       <Container fluid>
-        <Row>
-          <Col size="md-6">
-            <Jumbotron>
-              <h1>Nominate a Student</h1>
-            </Jumbotron>
-            <form>
-              <Input
-                value={this.state.name}
-                onChange={this.handleInputChange}
-                name="name"
-                placeholder="Name (required)"
-              />
-              <Input
-                value={this.state.teacher}
-                onChange={this.handleInputChange}
-                name="teacher"
-                placeholder="Teacher (required)"
-              />
-              <TextArea
-                value={this.state.award}
-                onChange={this.handleInputChange}
-                name="award"
-                placeholder="Award (Optional)"
-              />
-              <FormBtn
-                disabled={!(this.state.teacher && this.state.name)}
-                onClick={this.handleFormSubmit}
-              >
-                Submit Student
-              </FormBtn>
-            </form>
-          </Col>
-        </Row>
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container text-center">
+            <h1 class="display-4">Student of the Month</h1>
+            <p class="lead">Simply resubmit to renominate</p>
+          </div>
+        </div>
+          <div className="card-div">
+            < Nominate award="6th Grade SOM" />
+            < Nominate award="7th Grade SOM"/>
+            < Nominate award="8th Grade SOM"/>
+          </div>
+          <div className="card-div">
+        <Nominate award="Character Counts" size={{width:600}}/>
+          </div>
       </Container>
     );
   }

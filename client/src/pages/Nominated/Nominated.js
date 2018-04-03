@@ -6,8 +6,9 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
+import Nominate from "../../components/Form";
 
-class Students extends Component {
+class Nominated extends Component {
   state = {
     students: [],
     name: "",
@@ -59,11 +60,11 @@ class Students extends Component {
         <Row>
           <Col size="md-12 sm-12">
             <Jumbotron>
-              <h1 class="text-center">Students On My List</h1>
+              <h1 className="text-center">Students On My List</h1>
             </Jumbotron>
             </Col>
             </Row>
-        <div class="row align-self-center">
+        <div className="row align-self-center">
               <Col size="md-6 sm-12" >
             {this.state.students.length ? (
               <List>
@@ -88,4 +89,4 @@ class Students extends Component {
   }
 }
 
-export default Students;
+export default Nominated;
