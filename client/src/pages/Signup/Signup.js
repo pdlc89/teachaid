@@ -91,10 +91,10 @@ class Signup extends Component {
                 <div className="col align-self-center box">
                   <form>
                     <div className="form-group">
-                      <p className="lead"><a href="/" className="btn btn-success">Back to Landing Page</a></p>
+                      <p className="lead"><a href="/landing" className="btn btn-success">Back to Landing Page</a></p>
                     </div>
                     <div className="form-group">
-                      <p className="lead"><a href="/" className="btn btn-info">Login</a></p>
+                      <p className="lead"><a href="/login" className="btn btn-info">Login</a></p>
                     </div>
                     <hr></hr>
                     <div className="form-group">

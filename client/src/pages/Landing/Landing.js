@@ -44,7 +44,7 @@ class Landing extends Component {
                 <div className="inner cover">
                   <h1 className="cover-heading">Teachaid</h1>
                   <p className="lead">This application will provide conflict resolution for nominating students of the month.</p>
-                  <p className="lead"><a href="/login" className="btn btn-lg btn-warning">REGISTER</a></p>
+                  <p className="lead"><a href="/signup" className="btn btn-lg btn-warning">REGISTER</a></p>
                 </div>
                 <div className="mastfoot">
                   <div className="inner">
