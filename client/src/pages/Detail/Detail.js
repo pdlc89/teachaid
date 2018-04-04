@@ -35,9 +35,9 @@ class Detail extends Component {
               <p>
                 {this.state.student.award}
               </p>
-              <p>
-                <h3><b>Notes</b></h3>
-              </p>
+              <h3><p>
+                <b>Notes</b>
+              </p></h3>
               <p>
                 {this.state.student.notes}
              </p>

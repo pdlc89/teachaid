@@ -15,6 +15,9 @@ const Nav = () => (
         <a href="/students" className="navbar-brand">
         Nominate
         </a>
+        <a href="/chat" className="navbar-brand">
+            Chat
+        </a>
       </div>
     </div>
   </nav>

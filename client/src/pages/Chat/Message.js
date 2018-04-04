@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classNames from "classnames"
 
+
 class Message extends Component {
     static propTypes = {
         author: PropTypes.string,
@@ -14,8 +15,9 @@ class Message extends Component {
             log: !this.props.author,
             me: this.props.me
         })
+
         return (
-            <div className="Message">
+            <div className={classes}>
                 {this.props.author && (
                     <span className="author">{this.props.author}:</span>
                 )}

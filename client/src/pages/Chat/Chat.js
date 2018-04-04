@@ -3,28 +3,32 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
-import API from "../../utils/API";
-
 import MessageList from './MessageList'
+import MessageForm from "./MessageForm"
 import "./Chat.css"
 
+let text = "Bonsoir Monde";
 class Chat extends Component {
+    state = {
+        chat: {
+            name: "me",
+            message: "Hello World"
+        }
+    };
     constructor(props) {
         super(props)
         this.state = {
-            messages: [],
+            name:"",
+            messages: []
         }
     } 
-    state = {
-        student: {}
-    };
-    // When this component mounts, grab the student with the _id of this.props.match.params.id
-    // e.g. localhost:3000/books/599dcb67f0f16317844583fc
-    componentDidMount() {
-        API.getStudent(this.props.match.params.id)
-            .then(res => this.setState({ student: res.data }))
-            .catch(err => console.log(err));
+    handleNewMessage = (text) => {
+        this.setState({
+           messages: [...this.state.messages, { me: true, author: "Me", body: text }],
+        })
+        console.log(text)
     }
+
 
     render() {
         return (
@@ -44,13 +48,15 @@ class Chat extends Component {
                             <h1>"TEACHERS NAME GOES HERE"</h1>
                             <div className="Test">
                                 <MessageList messages={this.state.messages} />
+                                <MessageForm onMessageSend={this.handleNewMessage} />
+                                
                             </div>
                         </article>
                     </Col>
                 </Row>
                 <Row>
                     <Col size="md-2">
-                        <Link to="/">← Back to Teachers</Link>
+                        <Link to="/"> Back to home</Link>
                     </Col>
                 </Row>
             </Container>

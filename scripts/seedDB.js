@@ -27,6 +27,13 @@ const studentSeed = [
     date: new Date(Date.now())
   }
 ];
+const chatSeed = [
+    {
+        name: "teach",
+        message: "Hello World",
+        date: new Date(Date.now())
+    }
+];
 
 db.Student
   .remove({})
@@ -38,4 +45,16 @@ db.Student
   .catch(err => {
     console.error(err);
     process.exit(1);
-  });
+    });
+
+db.Chat
+    .remove({})
+    .then(() => db.Chat.collection.insertMany(chatSeed))
+    .then(data => {
+        console.log(data.insertedIds.length + " records inserted!");
+        process.exit(0);
+    })
+    .catch(err => {
+        console.error(err);
+        process.exit(1);
+    });
