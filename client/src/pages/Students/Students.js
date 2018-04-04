@@ -12,29 +12,33 @@ import Card from "../../components/Card";
 class Students extends Component {
   state = {
     students: [],
-    name: "",
-    grade: "",
+    g6Student: "",
+    g7Student: "",
+    g8Student: "",
     teacher: "",
-    award: ""
+    characterCounts: ""
   };
 
-  componentDidMount() {
-    this.loadStudents();
-    console.log(this);
-  }
-
-  loadStudents = () => {
-    API.getStudents()
-      .then(res =>
-        this.setState({ students: res.data, name: "", grade: "", teacher: "", award: "" })
-      )
-      .catch(err => console.log(err));
+  handleFormSubmit = (event, data) => {
+    event.preventDefault();
+    if (this.state.g6Student || this.state.teacher) {
+      API.saveStudent({
+        g6Student: this.state.g6Student,
+        g7Student: this.state.g7Student,
+        g8Student: this.state.g8Student,
+        teacher: this.state.teacher,
+        characterCounts: this.state.characterCounts
+      })
+        .then(res => this.loadStudents(), alert("You have nominated " + this.state.g6Student))
+        .catch(err => console.log(err));
+    }
   };
 
-  deleteStudent = id => {
-    API.deleteStudent(id)
-      .then(res => this.loadStudents())
-      .catch(err => console.log(err));
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
   };
 
 
@@ -48,13 +52,69 @@ class Students extends Component {
           </div>
         </div>
           <div className="card-div">
-            < Nominate award="6th Grade SOM" />
-            < Nominate award="7th Grade SOM"/>
-            < Nominate award="8th Grade SOM"/>
+          <div className="card bg-dark">
+            <div className="bg-success text-white text-center card-header">
+              Student of the Month Nominations
+            </div>
+            <div className="card-body">
+
+              <form>
+                <Input inputProps={{
+                  value:this.state.g6Student,
+                  onChange:this.handleInputChange,
+                  name:"g6Student",
+                  placeholder:"Student Name"
+                }}
+                label="6th Grader: "
+                />
+                <Input inputProps={{
+                  value: this.state.g7Student,
+                  onChange: this.handleInputChange,
+                  name: "g7Student",
+                  placeholder: "Student Name"
+                }}
+                label="7th Grader: "
+                />
+                <Input
+                  inputProps={{
+                    value: this.state.g8Student,
+                    onChange: this.handleInputChange,
+                    name: "g8Student",
+                    placeholder: "Student Name"
+                  }}
+                  label="8th Grader: "
+                />
+                <Input
+                  inputProps={{
+                    value: this.state.characterCounts,
+                    onChange: this.handleInputChange,
+                    name: "characterCounts",
+                    placeholder: "Student Name"
+                  }}
+                  label="Respect: "
+                />
+                <Input
+                  inputProps={{
+                    value: this.state.teacher,
+                    onChange: this.handleInputChange,
+                    name: "teacher",
+                    placeholder: "Teacher Name"
+                  }}
+                  label="Teacher: "
+                />
+                <div className="btn-div">
+                  <FormBtn
+                    disabled={!(this.state.teacher || this.state.g6Student)}
+                    onClick={this.handleFormSubmit}
+                  >
+                    Submit Student
+                            </FormBtn>
+                </div>
+              </form>
+            </div>
           </div>
-          <div className="card-div">
-        <Nominate award="Character Counts" size={{width:600}}/>
           </div>
+
       </Container>
     );
   }

@@ -11,9 +11,11 @@ import Nominate from "../../components/Form";
 class Nominated extends Component {
   state = {
     students: [],
-    name: "",
+    g6Student: "",
+    g7Student: "",
+    g8Student: "",
     teacher: "",
-    award: ""
+    characterCounts: ""
   };
 
   componentDidMount() {
@@ -23,7 +25,7 @@ class Nominated extends Component {
   loadStudents = () => {
     API.getStudents()
       .then(res =>
-        this.setState({ students: res.data, name: "", teacher: "", award: "" })
+        this.setState({ students: res.data, g6Student: "", g7Student: "", g8Student: "", teacher: "", characterCounts: "" })
       )
       .catch(err => console.log(err));
   };
@@ -43,11 +45,13 @@ class Nominated extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.name && this.state.teacher) {
+    if (this.state.g6Student || this.state.teacher) {
       API.saveStudent({
-        name: this.state.name,
+        g6Student: this.state.g6Student,
+        g7Student: this.state.g7Student,
+        g8Student: this.state.g8Student,
         teacher: this.state.teacher,
-        award: this.state.award
+        characterCounts: this.state.characterCounts
       })
         .then(res => this.loadStudents())
         .catch(err => console.log(err));
@@ -72,7 +76,7 @@ class Nominated extends Component {
                   <ListItem key={student._id}>
                     <Link to={"/students/" + student._id}>
                       <strong>
-                        {student.name} by {student.teacher}
+                        {student.g6Student}, {student.g7Student}, {student.g8Student} and {student.characterCounts} by {student.teacher}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => this.deleteStudent(student._id)} />

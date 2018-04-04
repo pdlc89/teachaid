@@ -10,7 +10,8 @@ class Nominate extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            name: '',
+            g6Student: '',
+            g7Student: '',
             teacher: '',
             grade: '',
             award: '',
@@ -19,14 +20,15 @@ class Nominate extends React.Component{
 
     handleFormSubmit = (event, data) => {
         event.preventDefault();
-        if (this.state.name && this.state.teacher) {
+        if (this.state.g6Student || this.state.teacher) {
             API.saveStudent({
-                name: this.state.name,
+                g6Student: this.state.g6Student,
+                g7Student: this.state.g7Student,
                 teacher: this.state.teacher,
                 grade: this.state.grade,
                 award: this.state.award
             })
-                .then(res => this.loadStudents(), alert("You have nominated " + this.state.name + " for " + this.state.award))
+                .then(res => this.loadStudents(), alert("You have nominated " + this.state.g6Student))
                 .catch(err => console.log(err));
         }
     };
@@ -45,11 +47,13 @@ class Nominate extends React.Component{
                 {this.props.award}
                 </div>
                     <div className="card-body">
+                    
                         <form>
                             <Input
-                                value={this.state.name}
+                                // testing {this.state.g6Student}
+                                value={this.state.g6Student}
                                 onChange={this.handleInputChange}
-                                name="name"
+                                name="g6Student"
                                 placeholder="Name (required)"
                             />
                             <Input
@@ -66,7 +70,7 @@ class Nominate extends React.Component{
                             /> */}
                             <div className="btn-div">
                             <FormBtn
-                                disabled={!(this.state.teacher && this.state.name)}
+                                disabled={!(this.state.teacher || this.state.g6Student)}
                                 onClick={this.handleFormSubmit}
                             >
                                 Submit Student
