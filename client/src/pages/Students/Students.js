@@ -8,6 +8,15 @@ import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import Nominate from '../../components/Form/Nominate'
 import Card from "../../components/Card";
+import Monthly from "./award.json";
+
+
+//this will display the award depending on the month
+let holder = new Date();
+let elm1 = holder.getMonth();
+let elm2 = Object.entries(Monthly)[elm1];
+let month = elm2[1];
+console.log(month);
 
 class Students extends Component {
   state = {
@@ -89,9 +98,9 @@ class Students extends Component {
                     value: this.state.characterCounts,
                     onChange: this.handleInputChange,
                     name: "characterCounts",
-                    placeholder: "Student Name"
+                    placeholder: "Character Counts Nomination"
                   }}
-                  label="Respect: "
+                  label={`${month}: `}
                 />
                 <Input
                   inputProps={{
