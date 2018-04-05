@@ -1,6 +1,5 @@
 import React from "react";
 import {Input} from "./Input";
-import {TextArea} from "./TextArea";
 import {FormBtn} from "./FormBtn";
 import API from "../../utils/API";
 import "./Nominate.css";
