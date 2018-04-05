@@ -12,6 +12,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 1000px;
+  width: calc(100% - 100px);
   margin: 0 auto;
 }

@@ -17,6 +17,9 @@ const Nav = () => (
         <li>
           <a className="navbar-brand text-success" href="/Nominated">This Month</a>
         </li>
+        <li>
+          <a class="navbar-brand text-success" href="/History">History</a>
+        </li>
       </ul>
 
   </div>

@@ -57,7 +57,7 @@ class Students extends Component {
         <div class="jumbotron jumbotron-fluid">
           <div class="container text-center">
             <h1 class="display-4">Student of the Month</h1>
-            <p class="lead">Simply resubmit to renominate</p>
+            <p class="lead">You are not required to submit for all grades!</p>
           </div>
         </div>
           <div className="card-div">

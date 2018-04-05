@@ -6,6 +6,7 @@ import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Splash from "./pages/Splash";
 import Nominated from "./pages/Nominated";
+import History from "./pages/History";
 
 const App = () => (
   <Router>
@@ -15,7 +16,7 @@ const App = () => (
         <Route exact path="/" component={Splash}/>
         <Route exact path="/nominated" component={Nominated} />
         <Route exact path="/nominate" component={Students} />
-        <Route exact path="/students" component={Students} />
+        <Route exact path="/history" component={History} />
         <Route exact path="/students/:id" component={Detail} />
         <Route component={NoMatch} />
       </Switch>
