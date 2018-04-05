@@ -38,7 +38,7 @@ class Students extends Component {
         teacher: this.state.teacher,
         characterCounts: this.state.characterCounts
       })
-        .then(res => this.loadStudents(), alert("You have nominated " + this.state.g6Student))
+        .then(res => this.loadStudents(), alert("Nomination complete!"))
         .catch(err => console.log(err));
     }
   };
