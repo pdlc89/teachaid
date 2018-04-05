@@ -5,7 +5,6 @@ import Login from "./pages/Login";
 import Students from "./pages/Students";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
-// import Nominate from "./pages/Nominate";
 
 const App = () => (
   <Router>
@@ -13,7 +12,6 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route exact path="/login" component={Login} />
-        <Route exact path="/students" component={Students} />
         <Route exact path="/students/:id" component={Detail} />
         <Route component={NoMatch} />
       </Switch>

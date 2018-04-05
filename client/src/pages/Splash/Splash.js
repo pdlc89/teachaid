@@ -1,22 +1,18 @@
-import React, { Component } from "react";
-import Jumbotron from "../../components/Jumbotron";
+import React from "react";
 import { Col, Row, Container } from "../../components/Grid";
+import Jumbotron from "../../components/Jumbotron";
 
-class Splash extends Component {
+const NoMatch = () => (
+  <Container fluid>
+    <Row>
+      <Col size="md-12">
+        <Jumbotron>
+          <h1 class="text-center">Splash</h1>
+        </Jumbotron>
+      </Col>
+    </Row>
+  </Container>
+);
 
-  render() {
-    return (
-      <Container fluid>
-        <Row>
-          <Col size="md-12">
-            <Jumbotron>
-              <h1>Splash Page</h1>
-            </Jumbotron>
-          </Col>
-        </Row>
-      </Container>
-    );
-  }
-}
+export default NoMatch;
 
-export default Splash;
