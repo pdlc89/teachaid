@@ -26,6 +26,10 @@ a:hover {
   border-radius: 2px;
 }
 
+.btn {
+  color: #fff;
+}
+
 /*
  * Base structure
  */
@@ -221,7 +225,7 @@ img
   }
   .site-wrapper-inner {
     vertical-align: middle;
-    padding-top: 350px;
+    padding-top: 280px;
   }
   .masthead,
   .mastfoot,

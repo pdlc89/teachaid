@@ -10,11 +10,8 @@ class Login extends Component {
 
   render() {
     return (
-        <div className="container" style={ styles }>
-          <div className="row " align="center">
-            <h1>LETS GET YOU SETTLED IN</h1>
-          </div>
-          <div className="container login" align="center">
+        <div className="container">
+          <div className="login" style={ styles } align="center">
             <div className="row">
               <div className="col-md-3" />
               <div className="col-md-6">
@@ -39,7 +36,7 @@ class Login extends Component {
                     <div className="form-group">
                       <input type="password" className="form-control" id="password" placeholder="Password" />
                     </div>
-                    <p className="lead"><a href="/nominate" className="btn btn-default">Sign up</a></p>
+                    <p className="lead"><a href="/nominate" className="btn btn-default">Register</a></p>
                   </form>
                 </div>
               </div>
