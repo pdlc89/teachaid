@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise;
 // This file empties the Students collection and inserts the students below
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/nominate",
+  process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist",
   {
     useMongoClient: true
   }
@@ -13,17 +13,15 @@ mongoose.connect(
 
 const studentSeed = [
   {
-    name: "Jenny",
-    teacher: "Ms Ly",
-    award: "July",
-    notes: "Good Kid",
+    name: "Jennifer Kim",
+    teacher: "Mrs. Ly",
+    award:"July",
     date: new Date(Date.now())
   },
   {
-    name: "Pedro",
-    teacher: "Mr Towne",
+    name: "Maximus Pinroc",
+    teacher: "Mr. Tom",
     award: "No assembly",
-    Notes: "Good Kid",
     date: new Date(Date.now())
   }
 ];

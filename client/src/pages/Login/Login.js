@@ -32,7 +32,7 @@ class Login extends Component {
         Auth.authenticateUser(res.data.token);
 
         // hard redirect to / to reload all the state and nav
-        window.location.href = "/students";
+        window.location.href = "/nominated";
       })
       .catch(err => this.setState({ errorMessage: err.response.data.message }));
   };
@@ -59,8 +59,11 @@ class Login extends Component {
 
   render() {
     return (
-        <div className="container">
-          <div className="login" style={ styles } align="center">
+        <div className="container" style={ styles }>
+          <div className="row " align="center">
+            <h1>LETS GET YOU SETTLED IN</h1>
+          </div>
+          <div className="container login" align="center">
             <div className="row">
               <div className="col-md-3" />
               <div className="col-md-6">
@@ -102,7 +105,8 @@ class Login extends Component {
                 </div>
               </div>
               <div className="col-md-3" />
-            </div>
+              </div>
+                <p className="backButton"><a href="/signup" className="btn btn-success">BACK</a></p>
           </div>
         </div>
     );

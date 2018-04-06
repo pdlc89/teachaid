@@ -6,15 +6,16 @@ const mongoose = require("mongoose");
 const passport = require('passport')
 const routes = require("./routes");
 const app = express();
+
+//localhost:3001
 const PORT = process.env.PORT || 3001;
 
 // Configure body parser for AJAX requests
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Serve up static assets
 app.use(express.static("client/build"));
-
 
 // pass the passport middleware
 app.use(passport.initialize());
@@ -29,24 +30,23 @@ passport.use('local-login', localLoginStrategy);
 const authCheckMiddleware = require('./middleware/auth-check');
 app.use('/api', authCheckMiddleware);
 
-
 // Add routes, both API and view
 app.use(routes);
-
-
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/nominations",
-  {
-    //useMongoClient: true
-  }
-
+  process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist"
 );
 
 // Start the API server
-app.listen(PORT, function () {
-    console.log(`API Server now listening on PORT ${PORT}!`);
+app.listen(PORT, function() {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
+
+
+
+
+
+

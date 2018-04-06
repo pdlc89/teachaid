@@ -1,18 +1,22 @@
-import React from "react";
-import { Col, Row, Container } from "../../components/Grid";
+import React, { Component } from "react";
 import Jumbotron from "../../components/Jumbotron";
+import { Col, Row, Container } from "../../components/Grid";
 
-const NoMatch = () => (
-  <Container fluid>
-    <Row>
-      <Col size="md-12">
-        <Jumbotron>
-          <h1 class="text-center">Splash</h1>
-        </Jumbotron>
-      </Col>
-    </Row>
-  </Container>
-);
+class Splash extends Component {
 
-export default NoMatch;
+  render() {
+    return (
+      <Container fluid>
+        <Row>
+          <Col size="md-12">
+            <Jumbotron>
+              <h1>Splash Page</h1>
+            </Jumbotron>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
+}
 
+export default Splash;

@@ -80,18 +80,15 @@ class Signup extends Component {
 
   render() {
     return (
-        <div className="container">
-          <div className="login" style={ styles } align="center">
+        <div className="container" style={ styles }>
+          <div className="container login" align="center">
             <div className="row">
               <div className="col-md-3" />
               <div className="col-md-6">
                 <div className="col align-self-center box">
                   <form>
                     <div className="form-group">
-                      <p className="lead"><a href="/" className="btn btn-success">Back to Landing Page</a></p>
-                    </div>
-                    <div className="form-group">
-                      <p className="lead"><a href="/login" className="btn btn-info">Login</a></p>
+                      <p className="loginButton"><a href="/login" className="btn btn-info">Login</a></p>
                     </div>
                     <hr></hr>
                     <div className="form-group">
@@ -149,10 +146,12 @@ class Signup extends Component {
                       Sign Up
                     </button>
                   </form>
+                  
                 </div>
               </div>
               <div className="col-md-3" />
             </div>
+                <p className="backButton"><a href="/" className="btn btn-success">BACK</a></p>
           </div>
         </div>
     );

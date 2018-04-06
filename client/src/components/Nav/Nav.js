@@ -75,17 +75,3 @@ class Nav extends Component {
 }
 
 export default Nav;
-
-// <div className="container-fluid">
-//   <div className="navbar-nav">
-//     <a href="/" className="navbar-brand">
-//       Home
-//         </a>
-//     <a href="/nominate" className="navbar-brand">
-//       Nominate a Student
-//         </a>
-//     <a href="/nominated" className="navbar-brand text-white">
-//       Nominations for this Month
-//         </a>
-//   </div>
-// </div>
