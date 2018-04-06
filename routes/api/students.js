@@ -8,7 +8,7 @@ router.route("/")
   
 
 
-// Matches with "/api/books/:id"
+// Matches with "/api/students/:id"
 router
   .route("/:id")
   .get(studentsController.findById)
