@@ -123,4 +123,4 @@ class Students extends Component {
   }
 }
 
-export default Students;
+export default Students

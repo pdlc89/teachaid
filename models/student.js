@@ -2,30 +2,19 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const studentSchema = new Schema({
-  g6Student: { 
+  name: { 
     type: String,
     trim: true, 
-    required: false, 
-  },
-  g7Student: {
-    type: String,
-    trim: true,
-    require: false,
-  },
-  g8Student: {
-    type: String,
-    trim: true,
-    required: false,
+    required: true 
   },
   teacher: { 
     type: String,
     trim: true,
     required: true
   },
-  characterCounts: {
+  award: {
     type: String, 
-    required: false,
-    trim: true
+    required: true
   },
   date: { 
     type: Date, 

@@ -71,15 +71,15 @@ class Nominated extends Component {
             {this.state.students
               .filter(student => new Date(Date.parse(student.date)).toLocaleString('en-US', { month: 'long' }) === thisMM )
               .map(student => (
-
+                <div>
+                  <DeleteBtn onClick={() => this.deleteStudent(student._id)} />
               <Card
                 g6={student.g6Student}
                 g7={student.g7Student}
                 g8={student.g8Student}
                 cc={student.characterCounts} 
-                title={student.teacher}>
-                    <DeleteBtn onClick={() => this.deleteStudent(student._id)} />
-                </Card>
+                title={student.teacher}/>
+                </div>
             ))}
           </div>
         ) : (

@@ -1,14 +1,15 @@
 import React from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
+import './NoMatch.css';
 
 const NoMatch = () => (
   <Container fluid>
     <Row>
       <Col size="md-12">
-        <Jumbotron>
+        <Jumbotron class="jumbotron">
           <h1>404 Page Not Found</h1>
-          <h1>
+          <h1 class="emoji">
             <span role="img" aria-label="Face With Rolling Eyes Emoji">
               🙄
             </span>
