@@ -12,21 +12,10 @@ const Card = props => (
             <p>7th Grade: {props.g7}</p>
             <p>8th Grade: {props.g8}</p>
             <p>Char Counts: {props.cc}</p>
+            {props.children}
         </div>
 
 )
-// class Card extends React.Component {
-
-//     render() {
-//         return (
-//             <div className="card-div">
-//                 <div className="card">
-//                     {...props}
-//                 </div>
-//             </div>
-//         );
-//     }
-// }
 
 
 export default Card;
