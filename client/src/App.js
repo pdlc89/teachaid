@@ -7,6 +7,7 @@ import Nav from "./components/Nav";
 import Splash from "./pages/Splash";
 import Nominated from "./pages/Nominated";
 import History from "./pages/History";
+//this is just a test
 
 const App = () => (
   <Router>
