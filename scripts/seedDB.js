@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise;
 // This file empties the Students collection and inserts the students below
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/students",
+  process.env.MONGODB_URI || "mongodb://localhost/nominate",
   {
     useMongoClient: true
   }

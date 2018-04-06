@@ -39,7 +39,7 @@ class Login extends Component {
                     <div className="form-group">
                       <input type="password" className="form-control" id="password" placeholder="Password" />
                     </div>
-                    <p className="lead"><a href="/" className="btn btn-default">Sign up</a></p>
+                    <p className="lead"><a href="/nominate" className="btn btn-default">Sign up</a></p>
                   </form>
                 </div>
               </div>
