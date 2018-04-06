@@ -9,7 +9,6 @@ import Nav from "./components/Nav";
 //import Splash from "./pages/Splash";
 import Nominated from "./pages/Nominated";
 import History from "./pages/History";
-import "./App.css";
 
 const App = () => (
   <Router>

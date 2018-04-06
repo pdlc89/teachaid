@@ -156,7 +156,7 @@ body {
 
 */
 
-.video-container, .video-js {
+.video-js {
     background-color: #fff;
     position: fixed;
     top: 0;
