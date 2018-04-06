@@ -13,6 +13,7 @@ import History from "./pages/History";
 const App = () => (
   <Router>
     <div>
+      <Nav/>
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route exact path="/login" component={Login} />
