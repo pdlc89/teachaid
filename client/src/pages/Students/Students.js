@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import Auth from '../../utils/Auth';
 import API from "../../utils/API";
-import { Container } from "../../components/Grid";
-import { Input, FormBtn } from "../../components/Form";
+import { Col, Row, Container } from "../../components/Grid";
+import Jumbotron from "../../components/Jumbotron";
+import { Input, FormBtn, TextArea } from "../../components/Form";
+import { List, ListItem } from "../../components/List";
 import Monthly from "./award.json";
-import { BrowserRouter as Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Route, Redirect, Link } from "react-router-dom";
+import DeleteBtn from "../../components/DeleteBtn";
 
 
 
@@ -46,88 +49,10 @@ class Students extends Component {
         });
     };
 
-
-    render() {
-        return (
-            <Container fluid>
-                <div class="jumbotron jumbotron-fluid">
-                    <div class="container text-center">
-                        <h1 class="display-4">Student of the Month</h1>
-                        <p class="lead">You are not required to submit for all grades!</p>
-                    </div>
-                </div>
-                <div className="card-div">
-                    <div className="card bg-dark">
-                        <div className="bg-success text-white text-center card-header">
-                            Student of the Month Nominations
-            </div>
-                        <div className="card-body">
-
-                            <form>
-                                <Input inputProps={{
-                                    value: this.state.g6Student,
-                                    onChange: this.handleInputChange,
-                                    name: "g6Student",
-                                    placeholder: "Student Name"
-                                }}
-                                    label="6th Grader: "
-                                />
-                                <Input inputProps={{
-                                    value: this.state.g7Student,
-                                    onChange: this.handleInputChange,
-                                    name: "g7Student",
-                                    placeholder: "Student Name"
-                                }}
-                                    label="7th Grader: "
-                                />
-                                <Input
-                                    inputProps={{
-                                        value: this.state.g8Student,
-                                        onChange: this.handleInputChange,
-                                        name: "g8Student",
-                                        placeholder: "Student Name"
-                                    }}
-                                    label="8th Grader: "
-                                />
-                                <Input
-                                    inputProps={{
-                                        value: this.state.characterCounts,
-                                        onChange: this.handleInputChange,
-                                        name: "characterCounts",
-                                        placeholder: "Character Counts Nomination"
-                                    }}
-                                    label={`${month}: `}
-                                />
-                                <Input
-                                    inputProps={{
-                                        value: this.state.teacher,
-                                        onChange: this.handleInputChange,
-                                        name: "teacher",
-                                        placeholder: "Teacher Name"
-                                    }}
-                                    label="Teacher: "
-                                />
-                                <div className="btn-div">
-                                    <FormBtn
-                                        disabled={!(this.state.teacher || this.state.g6Student)}
-                                        onClick={this.handleFormSubmit}
-                                    >
-                                        Submit Student
-                  </FormBtn>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-            </Container>
-        );
-    }
   render() {
     return (
       Auth.isUserAuthenticated() ? (
       <div>
-        <Nav />
       <Container fluid>
         <Row>
           <Col size="md-6">
