@@ -1,27 +1,30 @@
 import React from "react";
 
 const Nav = () => (
-    <nav class="navbar navbar-expand-lg navbar-dark  bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="navbar-brand text-success" href="/">Home</a>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav mr-auto">
+                <li className="nav-item active">
+                    <a className="nav-link" href="./students.html">Home <span className="sr-only">(current)</span></a>
                 </li>
-                <li>
-                    <a class="navbar-brand text-success" href="/Nominate">Nominate</a>
+                <li className="nav-item">
+                    <a className="nav-link" href="./nominate.html">Nominate</a>
                 </li>
-                <li>
-                    <a className="navbar-brand text-success" href="/Nominated">This Month</a>
-                </li>
-                <li>
-                    <a class="navbar-brand text-success" href="/History">History</a>
+                <li className="nav-item dropdown">
+                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Students
+                    </a>
+                    <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a className="dropdown-item" href="#">Current Month</a>
+                        <a className="dropdown-item" href="#">History</a>
+                        <div className="dropdown-divider" />
+                        <a className="dropdown-item" href="#">Donate</a>
+                    </div>
                 </li>
             </ul>
-
+            <form className="form-inline my-2 my-lg-0">
+                <button className="btn btn-outline-warning my-2 my-sm-0" type="submit">Logout</button>
+            </form>
         </div>
     </nav>
 );
