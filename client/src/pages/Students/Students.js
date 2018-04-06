@@ -1,8 +1,11 @@
 import React, { Component } from "react";
+import Auth from '../../utils/Auth';
 import API from "../../utils/API";
 import { Container } from "../../components/Grid";
 import { Input, FormBtn } from "../../components/Form";
 import Monthly from "./award.json";
+import { BrowserRouter as Route, Redirect } from "react-router-dom";
+
 
 
 //this will display the award depending on the month
@@ -10,7 +13,6 @@ let holder = new Date();
 let elm1 = holder.getMonth();
 let elm2 = Object.entries(Monthly)[elm1];
 let month = elm2[1];
-console.log(month);
 
 class Students extends Component {
     state = {
@@ -121,6 +123,75 @@ class Students extends Component {
             </Container>
         );
     }
+  render() {
+    return (
+      Auth.isUserAuthenticated() ? (
+      <div>
+        <Nav />
+      <Container fluid>
+        <Row>
+          <Col size="md-6">
+            <Jumbotron>
+              <h1>Nominate a Student</h1>
+            </Jumbotron>
+            <form>
+              <Input
+                value={this.state.name}
+                onChange={this.handleInputChange}
+                name="name"
+                placeholder="Name (required)"
+              />
+              <Input
+                value={this.state.teacher}
+                onChange={this.handleInputChange}
+                name="teacher"
+                placeholder="Teacher (required)"
+              />
+              <TextArea
+                value={this.state.award}
+                onChange={this.handleInputChange}
+                name="award"
+                placeholder="Award (Optional)"
+              />
+              <FormBtn
+                disabled={!(this.state.teacher && this.state.name)}
+                onClick={this.handleFormSubmit}
+              >
+                Submit Student
+              </FormBtn>
+            </form>
+          </Col>
+          <Col size="md-6 sm-12">
+            <Jumbotron>
+              <h1>Students On My List</h1>
+            </Jumbotron>
+            {this.state.students.length ? (
+              <List>
+                {this.state.students.map(student => (
+                  <ListItem key={student._id}>
+                    <Link to={"/students/" + student._id}>
+                      <strong>
+                        {student.name} by {student.teacher}
+                      </strong>
+                    </Link>
+                    <DeleteBtn onClick={() => this.deleteStudent(student._id)} />
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
+          </Col>
+        </Row>
+      </Container>
+    </div>
+      ) : (
+        <Redirect
+            to='/'
+          />
+      )
+    );
+  }
 }
 
 export default Students;
